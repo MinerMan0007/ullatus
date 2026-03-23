@@ -7,6 +7,13 @@ def kas_net_on():
         küsib_veel = input("hästi net on kas lõbu pärast soovid ühe korra kontrolli veel(jah/ei): ")
         if küsib_veel == "jah":
             kas_net_on()
+        else:
+            browser = input("kas soovid hakata neti kasutama pane (google-chrome, firefox, safari, opera, msedge) või ei: ")
+            if browser == "ei":
+                exit()
+            else:
+                os.startfile(f"{browser}")
+
     else:
         print("midagi valesti")
         küsib_uuesti = input("kas soovid uuesti kontrollida? (jah/ei): ")
@@ -15,6 +22,7 @@ def kas_net_on():
         else:
             print("ma ei viitsin siin änam olla kui sa ei soovi minu abi")
             exit()
+
 
 
 kas_net_on()
