@@ -1,9 +1,10 @@
 import os
 
 def kas_net_on():
-    os.system("ping -n 5 google.com")
-    if "Lost = 0":
-        küsib_veel = input("hästi net on kas lõbu pärasy soovid ühe korra kontrolli veel(jah/ei): ")
+    print("kontrollin ühendus....")
+    vastus = os.popen("ping -n 5 8.8.8.8").read()
+    if "Lost = 0" in vastus:
+        küsib_veel = input("hästi net on kas lõbu pärast soovid ühe korra kontrolli veel(jah/ei): ")
         if küsib_veel == "jah":
             kas_net_on()
     else:
